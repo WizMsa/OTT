@@ -25,7 +25,7 @@ public class CustomOneTimeTokenSuccessHandler implements OneTimeTokenGenerationS
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(UrlUtils.buildFullRequestUrl(request));
         builder.replacePath(request.getContextPath());
         builder.queryParam("token", oneTimeToken.getTokenValue());
-        builder.path("/login/ott");
+        builder.path("/ott");
         String magicLink = builder.toUriString();
         log.info("the magic link :: {}", magicLink);
         log.info("the oneTimeToken value :: {}", oneTimeToken.getTokenValue());
